@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل البكالوريا</title>
+    <style>
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-top: 30px;
+            font-size: 24px;
+        }
+        form {
+            background-color: #ffffff;
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        form button {
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #45a049;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: #4caf50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+        .form-header {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+        @media (max-width: 480px) {
+            form {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1> تسجيلات البكالوريا التجريبية</h1>
+    <h1> بالمدرسة العليا للأساتذة بالأغواط  </h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-header">يرجى ملء النموذج أدناه</div>
+        {{ form.as_p }}
+        <button type="submit">تسجيل</button>
+    </form>
+</body>
+</html>

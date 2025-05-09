@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #006233;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 18px;
+            color: #006233;
+        }
+
+        header h2 {
+            margin: 3px 0;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .title {
+            text-align: center;
+            color: #d52b1e;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #222;
+        }
+
+        .info p strong {
+            color: #006233;
+            display: inline-block;
+            width: 120px;
+        }
+
+        .note, .instructions {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #fffbe6;
+            border-right: 4px solid #d52b1e;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .instructions h3 {
+            color: #d52b1e;
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+        table.exam-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        table.exam-table th,
+        table.exam-table td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: center;
+        }
+
+        table.exam-table th {
+            background-color: #006233;
+            color: white;
+        }
+
+        table.exam-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>الجمهورية الجزائرية الديمقراطية الشعبية</h1>
+        <h2>وزارة التعليم العالي و البحث العلمي</h2>
+        <h2>المدرسة العليا للأساتذة بالأغواط</h2>
+    </header>
+
+    <div class="container">
+        <div class="title">استدعاء امتحان البكالوريا</div>
+        
+        <div class="info">
+            <p><strong>الاسم:</strong> {{ student.last_name }}</p>
+            <p><strong>اللقب:</strong> {{ student.first_name }}</p>
+            <p><strong>رقم التسجيل:</strong> {{ student.username }}</p>
+            <p><strong>التخصص:</strong> {{ student.get_speciality_display }}</p>
+        </div>
+
+        <div class="instructions">
+            <h3>تعليمات هامة:</h3>
+            <ul>
+                <li>الحضور قبل نصف ساعة على الأقل من بداية الامتحان.</li>
+                <li>إحضار بطاقة الهوية الوطنية أو وثيقة تثبت الهوية.</li>
+                <li>منع استعمال الهواتف المحمولة أو أي وسيلة إلكترونية داخل قاعة الامتحان.</li>
+                <li>اتباع تعليمات الحراس بدقة.</li>
+                <li>الغياب بدون مبرر يؤدي إلى الإقصاء.</li>
+            </ul>
+        </div>
+
+        <h3 style="color:#006233; margin-top:20px; font-size:14px;">جدول الامتحانات:</h3>
+        <table class="exam-table">
+            <thead>
+                <tr>
+                    <th>اليوم</th>
+                    <th>التاريخ</th>
+                    <th>المادة</th>
+                    <th>الساعة</th>
+                    <th>القاعة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>الأحد</td>
+                    <td>2025-06-01</td>
+                    <td>الرياضيات</td>
+                    <td>08:00 - 10:00</td>
+                    <td>101</td>
+                </tr>
+                <tr>
+                    <td>الإثنين</td>
+                    <td>2025-06-02</td>
+                    <td>اللغة العربية</td>
+                    <td>08:00 - 10:30</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>2025-06-03</td>
+                    <td>الفيزياء</td>
+                    <td>11:00 - 13:00</td>
+                    <td>103</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            يرجى التأكد من المعلومات الواردة أعلاه، وفي حال وجود أي خطأ، التوجه فوراً إلى الإدارة لتصحيحه.
+        </div>
+    </div>
+</body>
+</html>
